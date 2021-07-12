@@ -1,7 +1,13 @@
 
 # About Ntuma Admin App
-This is the backend codebase for admin web application for Ntuma Market Assistant System.
-Built using React and hosted with a database hosted on MondoDB.
+This is the backend codebase for the admin web application for Ntuma Market Assistant System.
+It was built using React and a MondoDB database.
+
+Development Team:
+* Elizabeth Kamugisha
+* Pauline Nalwanga
+* Otim Benjamin Mungurik
+* Philip Jotham Okiror
 
 # Getting Started
 1) Run "npm install" to install dependencies.
