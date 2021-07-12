@@ -7,16 +7,17 @@ exports.validRegister = [
     .notEmpty()
     .isLength({
       min: 4,
-      max: 32,
+      max: 25,
     })
     .withMessage('username  must be between 3 to 25 characters'),
   check('phone', 'Phone is required').notEmpty(),
   check('phone')
     .isLength({
-      min: 0,
-      max: 11,
+      min: 10,
+      max: 10,
     })
     .withMessage('Phone must contain atleast 1-10 characters'),
+  check('phone', 'Phone Number should be in numbers').isNumeric(),
   check('firstName', 'First Name is required')
     .notEmpty()
     .isLength({
@@ -31,7 +32,10 @@ exports.validRegister = [
       max: 25,
     })
     .withMessage('Last Name  must be between 3 to 25 characters'),
-  check('email').notEmpty().withMessage('Must be a valid email address'),
+  check('email')
+    .notEmpty()
+    .isEmail()
+    .withMessage('Must be a valid email address'),
   check('password', 'Password is required').notEmpty(),
   check('password')
     .isLength({
@@ -68,7 +72,9 @@ exports.resetPasswordValidator = [
     .not()
     .isEmpty()
     .isLength({ min: 6 })
-    .withMessage('Password must be at least  6 characters long'),
+    .withMessage('Password must be at least  6 characters long')
+    .matches(/\d/)
+    .withMessage('Password must contain a number'),
 ];
 
 // Validation Helpers

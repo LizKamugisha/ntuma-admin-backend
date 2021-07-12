@@ -37,7 +37,7 @@ const addassistantFormRoutes = require('./routes/addassistantformroutes');
 const addproductFormRoutes = require('./routes/addproductformroutes');
 const addmarketFormRoutes = require('./routes/addmarketformroutes');
 const registerSignUpFormRoutes = require('./routes/registerSignUproutes');
-const adminSignInFormRoutes = require('./routes/adminSignInroutes');
+// const adminSignInFormRoutes = require('./routes/adminSignInroutes');
 
 // db
 mongoose.connect(process.env.DATABASE, {
@@ -92,8 +92,9 @@ app.use(passport.session());
 
 // Registering use of middleware.
 app.use('/api', registerSignUpFormRoutes);
-app.use('/adminsignin', adminSignInFormRoutes);
+// app.use('/adminsignin', adminSignInFormRoutes);
 app.use('/addmarket', addmarketFormRoutes);
+app.use('/addmarket/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/addproduct', addproductFormRoutes);
 app.use('/addproduct/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/addassistant', addassistantFormRoutes);
