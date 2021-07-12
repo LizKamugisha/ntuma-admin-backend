@@ -1,6 +1,11 @@
 
-# About Ntuma
-COVID-19 pandemic brought about significant disruption in the operations of many of the traditional/mainstream activities like going to the market to buy groceries and food supplies. There was an attempt by a number of initiatives around creating digital solutions to enable the buyers access the supplies however these did not address the structural gaps that exist in our markets. Whereas quite a number of people were able to find a way of keeping their supplies flowing there are a number of challenges with the adopted use of technology. The buyer will ordinarily have a carry boy in the market who is called a list is read out or sent by text or Whatsapp. The buyer will send money by Mobile Money or cash on receipt of the supplies. The carry boy is a pivotal factor in the produce market because they know and appreciate the structure of the market. Earlier attempts eliminated the carry boy and as such have not been able to attain full adoption. Understanding this dynamic is so fundamental if an appropriate digital solution is to be built that offers value to the consumer. #REQUIREMENTS
+# About Ntuma Admin App
+This is the backend codebase for admin web application for Ntuma Market Assistant System.
+Built using React and hosted with a database hosted on MondoDB.
 
-# INSTALLATION OF DEPENDENCIES..
-RUN "npm install" to install dependencies.
+# Getting Started
+1) Run "npm install" to install dependencies.
+2) Run "npm i dotenv" and create .env file to set up the database enviroment 
+3) Copy & paste the following database variable into the .env file : DB=mongodb+srv://PHIL:NTUMA@cluster0.m4sof.mongodb.net/ntuma?retryWrites=true&w=majority
+4) Run "npm start" to start the server. A confirmation message should appear in the terminal.
+5) Clone & set up the admin frontend from this repo: https://github.com/munguriek/ntuma-ui
