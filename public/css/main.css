@@ -1,0 +1,201 @@
+:root{
+    --primary-color:#479030;
+    --secondary-color: #e78c06;
+    --ascent-color: #48ae0c;
+    --ascent-alt: #ff9f00;
+    --color-dark: #1d2231;
+    --color-white: #efefef;
+}
+
+*{
+    font-family:  Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+.sidebar{
+    height: 100%;
+    width: 270px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background-color: var(--secondary-color);
+    color: var(--color-white);
+    overflow-y: auto;
+}
+
+.sidebar-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0rem 1rem;
+}
+
+.sidebar-menu{
+    padding: 1rem;
+}
+
+.sidebar li{
+    margin-bottom: 1.2rem;
+}
+
+.sidebar a{
+    color: var(--color-white);
+    font-size: .9rem;
+}
+
+.sidebar a span:last-child{
+    padding: .6rem;
+}
+
+.main-content{
+    position: relative;
+    margin-left: 270px;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: calc(100% - 270px);
+    background: var(--primary-color);
+    color: var(--color-white);
+    border-bottom: 1px solid var(--ascent-color);
+    padding: 0rem 1.2rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    left: 270px;
+}
+
+.top-menu{
+    display: flex;
+    align-items: center;
+}
+
+.top-menu span, .top-menu div{
+    margin-left: 1rem;
+}
+
+.top-menu img{
+    height: 38px;
+    width: 38px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+main{
+    margin-top: 60px;
+    background: var(--color-white);
+    min-height: 90vh;
+    padding: 1rem;
+}
+
+.dashboard-cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 5rem;
+}
+
+.card-single{
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.card-body{
+    padding: 1.3rem 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.card-body span{
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    padding-right: 1rem;
+}
+
+.card-body h5{
+    color: var(--color-dark);
+    font-size: 1rem;
+}
+
+.card-body h6{
+    color: var(--ascent-color);
+    font-size: 1.1rem;
+    margin-top: .1rem;
+}
+
+.card-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-footer a{
+    color: var(--primary-color);
+}
+
+.statistics{
+    margin-top: 3rem;
+}
+
+.statistics-grid{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    column-gap: 1.5rem;
+}
+
+.popular-products{
+    background-color: #fff;
+    height: 11rem;
+    border-radius: 7px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+   
+}
+
+.popular-products h3{
+    color: var(--color-dark);
+    margin: 1rem;
+}
+
+.summary{
+    margin-bottom: 1.5rem;
+    
+}
+
+.summary-card{
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 7px;
+    margin-right: 25px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.piechart {
+    /* width: 900px;  */
+    height: 28rem;
+    background-color: #fff;
+    border-radius: 7px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+/* Dashboard Graph CSS  */
+.graph{
+    display: flex;
+    margin-left: auto;
+    margin-top: -11rem;
+    background-color: #fff;
+    width: 48.9rem;
+    height: 500px;
+    border-radius: 7px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}

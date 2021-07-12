@@ -1,0 +1,43 @@
+.greyBackground {
+    background-color: #E7EBF0;
+    width: auto;
+    height: 790px;
+    padding-top: 50px;
+}
+.container {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding-top: 10px;
+}
+button {
+    background-color: #FFFFFF;
+    border: #FFFFFF;
+    width: 50%;
+}
+.fa-eye {
+    font-size: 14pt;
+    text-align: center;
+}
+.row {
+float: right;
+width: 50%;
+}
+.btn {
+    background-color:#E78C06;
+    color: #ffffff;
+    margin-left: 10px;
+    width: auto;
+}
+.form-inline{
+    width: 50%;
+}
+#searchBtn{
+    background-color:#479030;
+    border-top-left-radius: 0pt;
+    border-bottom-left-radius: 0pt;
+    margin-left: 0pt;
+}
+#searchInput{
+    border-top-right-radius: 0pt;
+    border-bottom-right-radius: 0pt;
+}
