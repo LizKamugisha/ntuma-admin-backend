@@ -33,17 +33,20 @@ router.get("/assistants", async (req, res) => {
 router.post("/assistants", upload, async (req, res) => {
   console.log(req.body);
   const marketBoy = new Assistants({
-    firstName: req.body.firstName,
-    surName: req.body.surName,
-    gender: req.body.gender,
+    firstname: req.body.firstname,
+    surname: req.body.surname,
+    email: req.body.email,
     phone: req.body.phone,
+    // passwordhash: req.body.passwordHash
+    // isAssistant: req.body.isAssistant
+    // gender: req.body.gender,
     address: req.body.address,
     market: req.body.market,
     refNumber: req.body.refNumber,
     profile_pic: req.body.profile_pic,
     password: req.body.password,
     confirm_password: req.body.confirm_password,
-    email: req.body.email,
+    
   });
   try {
     marketBoy.profile_pic =

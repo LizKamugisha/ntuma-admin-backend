@@ -1,13 +1,16 @@
 const express = require("express");
+const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const path = require("path");
 // routes
-const market = require("./routes/market");
+const marketRoute = require("./routes/marketRoute");
 const productRoute = require("./routes/productRoute");
-const registerRoutes = require("./routes/registerRoutes");
-const assistants = require("./routes/assistants");
+// const registerRoutes = require("./routes/registerRoutes");
+const registerSignUpFormRoutes = require("./routes/registerSignUproutes");
+const assistantRoute = require("./routes/assistantRoute");
+const categoryRoute = require("./routes/categoryRoute");
 // dotenv
 require("dotenv").config();
 const mongoose = require("mongoose");
@@ -36,10 +39,21 @@ mongoose.connection
     console.log(`Connection error: ${err.message}`);
   });
 
-app.use(cors());
+// app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressSession);
+
+// Dev Logginf Middleware
+if (process.env.NODE_ENV === 'development') {
+  app.use(
+    cors({
+      origin: process.env.CLIENT_URL,
+    })
+  );
+  app.use(morgan('dev'));
+}
+
 app.use(passport.initialize());
 app.use(passport.session());
 // passport authentication
@@ -47,14 +61,14 @@ passport.use(Users.createStrategy());
 passport.serializeUser(Users.serializeUser());
 passport.deserializeUser(Users.deserializeUser());
 
-app.use("/", market);
+// Registering use of middleware.
+app.use('/api', registerSignUpFormRoutes);
+
+app.use("/", marketRoute);
 app.use("/", productRoute);
 app.use("/", registerRoutes);
-app.use("/", assistants);
-// app.get('/', (req, res) => {
-//     // res.send('hiiiiiiii')
-//     res.sendFile('/adminLogin.html')
-// });
+app.use("/", assistantRoute);
+app.use("/", categoryRoute);
 
 //Setting up the path for our static files.
 app.use(express.static(path.join(__dirname, "public")));

@@ -33,11 +33,18 @@ router.get("/product", async (req, res) => {
 router.post("/product", upload, async (req, res) => {
   console.log(req.body);
   const productList = new Product({
-    productName: req.body.productName,
-    productType: req.body.productType,
-    price: req.body.price,
-    quantity: req.body.quantity,
+    name: req.body.name,
+    description: req.body.description,
+    detailedDescription: req.body.detailedDescription,
     image: req.body.image,
+    price: req.body.price,
+    category: req.body.category,
+    countInStock: req.body.countInStock,
+    rating: req.body.rating,
+    numReviews: req.body.numReviews,
+    isFeatured: req.body.isFeatured,
+    dateCreated: req.body.dateCreated,
+    
   });
   try {
     // req.body allows us to access data

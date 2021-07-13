@@ -21,7 +21,7 @@ const jwt = require('jsonwebtoken');
 const sgMail = require('@sendgrid/mail');
 const mailgun = require('mailgun-js');
 const mail = require('@sendgrid/mail');
-const RegistersignUp = require('../model/registerSignUpmodel');
+const RegistersignUp = require('../models/registerSignUpmodel');
 // Custom error handler to get useful error from database errors
 // eslint-disable-next-line import/no-unresolved
 const { errorHandler } = require('../helpers/dbErrorHandling');
